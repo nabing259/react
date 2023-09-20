@@ -1,20 +1,17 @@
 import React from 'react';
 
-const TodoItem = ({ todo, index, deleteTodo, toggleTodo }) => {
-  const handleToggle = () => {
-    toggleTodo(index);
-  };
+const TodoItem = ({index, status, todo, toggleTodo, deleteTodo }) => {
+  // const handleToggle = () => {
+  //   toggleTodo(todo.id);
+  // };
 
   return (
-    <li>
-      <input
-        type="checkbox"
-        checked={todo.completed}
-        onChange={handleToggle}
-      />
-      <span>{todo.text}</span>
-      <i className="fas fa-trash-alt" onClick={() => deleteTodo(index)}></i>
-    </li>
+    <div className='flex gap-5 justify-center border-2 p-2 border-amber-400 rounded-md'>
+      <div>{todo}</div>
+      <div>{status ? "Done" : "Not Done"}</div>
+      <button onClick={() => toggleTodo(index)} className='bg-blue-500 px-1 h-5 rounded-md text-sm mt-1'>Toggle</button>
+      <button onClick={() => deleteTodo(index)} className='bg-red-500 px-2 h-5 rounded-md text-sm mt-1'>Delete</button>
+    </div>
   );
 };
 

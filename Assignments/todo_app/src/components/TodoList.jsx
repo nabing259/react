@@ -1,19 +1,20 @@
 import React from 'react';
 import TodoItem from './TodoItem';
 
-const TodoList = ({ todos, deleteTodo, toggleTodo }) => {
+const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
   return (
-    <ul>
-      {todos.map((todo, index) => (
+    <div className="mb-5 text-center w-96 m-auto">
+      {todos.map((todo) => (
         <TodoItem
-          key={index}
-          todo={todo}
-          index={index}
-          deleteTodo={deleteTodo}
+          key={todo.id}
+          todo={todo.text}
+          index={todo.id}
           toggleTodo={toggleTodo}
+          deleteTodo={deleteTodo}
+          status={todo.completed}
         />
       ))}
-    </ul>
+    </div>
   );
 };
 
