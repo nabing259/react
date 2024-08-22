@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List Rendering</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        // Your ItemList component code will go here
+
+        
+        function Counter(){
+            let a = 5;
+            const [val, setVal] = React.useState(5);
+            function increment() {
+                setVal(val+1);
+            }
+            return(
+                <div>
+                    <h1>{val}</h1>
+                    <button onClick={increment}>Click</button>    
+                </div>
+            )
+        }
+        
+        function App(){
+            return(
+                <div>
+                    <Counter/>
+                </div>
+            )
+        }
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App/>);
+    </script>
+</body>
+
+</html>
