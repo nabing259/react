@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+</head>
+
+<body>
+    <div id="root" style="margin: auto;"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        // Your JSX code here
+        function App(){
+
+            return(
+                <>
+                <div style={{
+                    display: "flex",
+                    flexDirection:"column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100vh",
+                    gap:"0",
+                }}>
+                    <img style={{
+                        width:"200px"
+                    }}
+                    src=".\image.png" alt=""/>
+                    <h1 style={{
+                        fontSize:"50px",
+                        margin:"0",
+                        padding:"0"
+                    }}>SUBSCRIBE</h1>
+                    <p style={{
+                            fontSize: "30px",
+                            marginBottom: "10px",
+                            padding: "0",
+                            color:"grey"
+                        }}>Subscribe Our NewsLetter & Stay up to Date</p>
+                    <form action=""
+                    style={{
+                                fontSize: "30px",
+                                margin: "10px",
+                                padding: "0",
+                                display: "flex",
+                                justifyContent: "center",
+                                gap: "20px",
+
+                            }}
+                    >
+                        <input type="text"
+                        style={{
+                                    fontSize: "30px",
+                                    padding: "10px 20px",
+                                    borderRadius:"40px",
+                                    border:"none",
+                                    boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px",
+                                }} placeHolder="nabing@sg.com"
+                        />
+                        <button  style={{
+                                fontSize: "30px",
+                                padding: "10px 10px",
+                                borderRadius: "40px",
+                                backgroundColor:"#4399e1",
+                                color:"white",
+                                border: "none",
+                            }}
+                            >Subscribe</button>    
+                    </form>
+                </div>
+                </>
+            )
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App/>)
+    </script>
+</body>
+
+</html>
